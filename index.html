@@ -122,6 +122,68 @@
   .bb-txt em { font-style: normal; font-family: "Bangers", "Impact", sans-serif; font-size: .9rem; letter-spacing: .03em; color: #FF8A8E; margin-left: .3rem; }
   .bb-cta { flex: none; text-decoration: none; white-space: nowrap; font-family: "Anton", "Impact", sans-serif; font-size: .95rem; color: #FFFFFF; background: #E3242B; border: 2px solid #FFFFFF; border-radius: 10px; padding: .45rem .7rem; }
   .page { padding-bottom: 5.2rem; }
+  .tuto { margin-top: -1.2rem; position: relative; z-index: 2; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .75rem .8rem .8rem; box-shadow: 4px 4px 0 #E3242B; }
+  .tuto-titre { font-family: "Bangers", "Impact", sans-serif; font-size: 1.05rem; letter-spacing: .04em; color: #E3242B; margin-bottom: .45rem; }
+  .tuto ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; }
+  .tuto li { text-align: center; font-size: .72rem; font-weight: 700; line-height: 1.25; color: #121626; }
+  .tuto li span { display: grid; place-items: center; width: 2.1rem; height: 2.1rem; margin: 0 auto .3rem; border-radius: 50%; background: #0E2470; color: #FFFFFF; font-size: 1rem; }
+  .tuto li.fait span { background: #2BB673; }
+  .voie { position: relative; }
+  .voie-large { grid-column: 1 / -1; }
+  .voie .touche { display: inline-block; margin-top: .45rem; font-size: .72rem; font-weight: 800; color: #E3242B; }
+  .voie[aria-pressed="true"] .touche { color: #7CF29C; }
+  .voies.attente .voie { animation: appel 1.6s ease-in-out infinite; }
+  .voies.attente .voie:nth-child(2) { animation-delay: .8s; }
+  @keyframes appel { 0%, 100% { box-shadow: 4px 4px 0 #1F4FD1; } 50% { box-shadow: 4px 4px 0 #1F4FD1, 0 0 0 5px rgba(227,36,43,.35); } }
+  .voies.choisi .voie[aria-pressed="false"] { opacity: .7; }
+  .attente-msg { margin-top: .6rem; text-align: center; font-size: .82rem; font-weight: 700; color: #E3242B; }
+  @media (prefers-reduced-motion: reduce) { .voies.attente .voie { animation: none; } }
+  .depart { position: fixed; inset: 0; z-index: 100; background: #0E2470; color: #FFFFFF; overflow-y: auto; display: flex;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .depart[hidden] { display: none !important; }
+  .depart-in { margin: auto; width: 100%; max-width: 26rem; padding: 2rem 1.3rem calc(2rem + env(safe-area-inset-bottom)); text-align: center; }
+  .depart .logo { margin: 0 auto 1rem; width: 3rem; height: 3rem; }
+  .depart h2 { font-family: "Permanent Marker", "Comic Sans MS", cursive; font-weight: 400; font-size: clamp(2rem, 9vw, 2.5rem); line-height: 1.05; transform: rotate(-3deg); }
+  .depart h2 span { color: #FF5A5F; display: block; }
+  .depart .chrono { display: inline-block; margin: 1rem 0 1.6rem; font-family: "Bangers", "Impact", sans-serif; letter-spacing: .04em; background: #E3242B; padding: .25rem .8rem; transform: rotate(-2deg); }
+  .depart .q { font-weight: 800; font-size: 1.05rem; margin-bottom: .9rem; }
+  .gros-btn { display: flex; align-items: center; gap: .8rem; width: 100%; text-align: left; font: inherit; cursor: pointer; margin-bottom: 1rem;
+    background: #FFFFFF; color: #121626; border: 3px solid #121626; border-radius: 18px; padding: 1rem 1rem; box-shadow: 6px 6px 0 #E3242B; animation: appel2 1.8s ease-in-out infinite; }
+  .gros-btn:nth-of-type(2) { animation-delay: .6s; box-shadow: 6px 6px 0 #1F4FD1; }
+  .gros-btn:nth-of-type(3) { animation-delay: 1.2s; box-shadow: 6px 6px 0 #2BB673; }
+  .gros-btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #E3242B; }
+  @keyframes appel2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
+  .gros-btn .ic { flex: none; width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; background: #EEF2FF; border: 2px solid #121626; }
+  .gros-btn b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
+  .gros-btn small { display: block; font-size: .8rem; color: #6B7190; }
+  .gros-btn .fl { margin-left: auto; flex: none; font-family: "Anton", "Impact", sans-serif; font-size: 1.1rem; color: #FFFFFF; background: #E3242B; border-radius: 10px; padding: .35rem .6rem; }
+  .depart .rassure { font-size: .8rem; color: #C9D5FF; margin-top: .4rem; }
+  .curseur.focus { box-shadow: 0 0 0 4px #E3242B, 3px 3px 0 #D5DDF0; animation: focus 1.4s ease-in-out 3; }
+  @keyframes focus { 50% { box-shadow: 0 0 0 8px rgba(227,36,43,.35), 3px 3px 0 #D5DDF0; } }
+  .btn-resultat { display: block; width: 100%; margin: .4rem 0 0; font: inherit; font-family: "Anton", "Impact", sans-serif; font-size: 1.3rem; color: #FFFFFF; background: #0E2470; border: 3px solid #121626; border-radius: 14px; padding: .7rem; box-shadow: 4px 4px 0 #E3242B; cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { .gros-btn, .curseur.focus { animation: none; } }
+  .benev { position: fixed; inset: 0; z-index: 110; background: #FFFFFF; overflow-y: auto; }
+  .benev[hidden] { display: none !important; }
+  .benev-tete { background: #0E2470; color: #FFFFFF; padding: 1.3rem 1.2rem 2.4rem; position: relative; overflow: hidden;
+    background-image: radial-gradient(#1B3A9E 1.2px, transparent 1.3px); background-size: 12px 12px; }
+  .benev-tete::after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -24px; height: 48px; background: #FFFFFF; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+  .benev-tete-in { max-width: 30rem; margin: 0 auto; position: relative; z-index: 1; }
+  .retour { font: inherit; font-size: .82rem; font-weight: 700; color: #FFFFFF; background: transparent; border: 1.5px solid rgba(255,255,255,.5); border-radius: 99px; padding: .3rem .8rem; cursor: pointer; }
+  .benev h2 { margin-top: 1rem; font-family: "Permanent Marker", "Comic Sans MS", cursive; font-weight: 400; font-size: clamp(1.9rem, 8.5vw, 2.4rem); line-height: 1.05; transform: rotate(-3deg); }
+  .benev h2 span { color: #7CE3A5; display: block; }
+  .benev-tete p { margin-top: .7rem; color: #DCE4FF; font-size: .95rem; line-height: 1.45; }
+  .benev-corps { max-width: 30rem; margin: 0 auto; padding: .5rem 1.1rem 2.5rem; }
+  .bloc { background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .9rem 1rem; margin-bottom: 1rem; }
+  .bloc.vert { box-shadow: 4px 4px 0 #2BB673; } .bloc.bleu { box-shadow: 4px 4px 0 #1F4FD1; } .bloc.rouge { box-shadow: 4px 4px 0 #E3242B; }
+  .bloc h3 { font-family: "Bangers", "Impact", sans-serif; font-weight: 400; font-size: 1.25rem; letter-spacing: .03em; color: #0E2470; margin-bottom: .45rem; }
+  .bloc p, .bloc li { font-size: .9rem; line-height: 1.5; }
+  .bloc ul { list-style: none; display: grid; gap: .45rem; }
+  .bloc li { display: flex; gap: .55rem; align-items: flex-start; }
+  .bloc li span { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; font-size: .85rem; background: #EEF2FF; }
+  .citation { font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: 1.25rem; color: #E3242B; text-align: center; transform: rotate(-2deg); margin: 1.3rem 0; line-height: 1.3; }
+  .lien-voies { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: transparent; border: 0; text-decoration: underline; cursor: pointer; }
+  .pied-benev { text-align: center; font-size: .72rem; color: #6B7190; margin-top: 1rem; }
+  .vers-benev { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: #EEF2FF; border: 1.5px dashed #1F4FD1; border-radius: 12px; padding: .65rem; cursor: pointer; }
   .confetti { position: fixed; width: 8px; height: 12px; z-index: 50; pointer-events: none; border-radius: 2px; animation: tombe 1.4s ease-in forwards; }
   @keyframes tombe { to { transform: translate(var(--dx), 70vh) rotate(var(--r)); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .medal.pop, .objectif, .confetti, .astuce .main { animation: none; } }
@@ -202,6 +264,54 @@
 </style>
 </head>
 <body>
+<div class="depart" id="depart" role="dialog" aria-modal="true" aria-label="Commencer le simulateur">
+  <div class="depart-in">
+    <div class="logo" aria-hidden="true">
+      <i style="left:16%;top:16%;width:68%;height:9%;background:#D7262E"></i>
+      <i style="left:16%;top:36%;width:68%;height:9%;background:#2F62C4"></i>
+      <i style="left:16%;top:36%;width:9%;height:30%;background:#2F62C4"></i>
+      <i style="left:48%;top:57%;width:36%;height:9%;background:#2F62C4"></i>
+    </div>
+    <h2>Calcule ton niveau<span>LEVEL UP !</span></h2>
+    <span class="chrono">⏱ 1 MINUTE CHRONO</span>
+    <p class="q">Pour commencer, touche ton objectif :</p>
+    <button class="gros-btn" type="button" data-depart="projet"><span class="ic" aria-hidden="true">🎯</span><span><b>FINANCER MON PROJET</b><small>Activité, formation, permis…</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="revenu"><span class="ic" aria-hidden="true">💼</span><span><b>ME CRÉER UN REVENU</b><small>En indépendant, à ton rythme</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="benevole"><span class="ic" aria-hidden="true">🤝</span><span><b>AIDER L'ASSOCIATION</b><small>En bénévole, pour la cause</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <p class="rassure">Gratuit · Sans inscription · Rien n'est enregistré</p>
+  </div>
+</div>
+<div class="benev" id="benev" role="dialog" aria-modal="true" aria-label="Devenir bénévole" hidden>
+  <div class="benev-tete"><div class="benev-tete-in">
+    <button class="retour" type="button" id="benev-retour">← Retour</button>
+    <h2>Rejoins l'aventure<span>en bénévole</span></h2>
+    <p>Tu as envie de t'engager pour une cause qui fait avancer les jeunes, à ton rythme ? Ta place est ici.</p>
+  </div></div>
+  <div class="benev-corps">
+    <section class="bloc bleu">
+      <h3>CE QUE TU FAIS</h3>
+      <p>Tu fais découvrir nos parfums de qualité lors d'actions solidaires. <b>Quand tu veux, autant que tu veux</b> : aucun objectif, aucune obligation. Tu es libre de venir, de t'absenter ou d'arrêter à tout moment.</p>
+    </section>
+    <section class="bloc vert">
+      <h3>CE QUE TU Y GAGNES</h3>
+      <ul>
+        <li><span aria-hidden="true">💬</span>Des compétences qui comptent : communiquer, convaincre, prendre confiance en toi.</li>
+        <li><span aria-hidden="true">📄</span>Une expérience à valoriser sur ton CV, et une attestation de bénévolat.</li>
+        <li><span aria-hidden="true">🤝</span>Des rencontres et un réseau, avec une équipe qui partage les mêmes valeurs.</li>
+        <li><span aria-hidden="true">✨</span>La fierté de faire avancer des projets solidaires.</li>
+      </ul>
+    </section>
+    <p class="citation">Chaque parfum diffusé aide un jeune à financer son projet.</p>
+    <section class="bloc rouge">
+      <h3>EN TOUTE TRANSPARENCE</h3>
+      <p>Le bénévolat n'est pas rémunéré : ni salaire, ni prime, ni cadeau lié à tes résultats. Tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs. Tu suis une courte formation offerte, et tu respectes la charte de l'association : honnêteté, respect, aucune pression à l'achat. Entre 16 et 17 ans, l'accord écrit d'un parent est nécessaire.</p>
+    </section>
+    <a class="cta" id="benev-cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME PROPOSE</a>
+    <p class="cta-sous">On te répond sur WhatsApp pour faire connaissance.</p>
+    <button class="lien-voies" type="button" id="benev-voies">Tu cherches plutôt à financer ton projet ou à te créer un revenu ? Calcule ton niveau →</button>
+    <p class="pied-benev">LEVEL UP by Form'Com · Association & organisme de formation</p>
+  </div>
+</div>
 <div class="page">
   <header class="tete">
     <div class="tete-in">
@@ -221,17 +331,26 @@
   </header>
 
   <main class="wrap">
+    <section class="tuto" aria-label="Mode d'emploi">
+      <p class="tuto-titre">TUTO : 3 ÉTAPES, 1 MINUTE</p>
+      <ol>
+        <li id="tuto1"><span aria-hidden="true">👆</span>Touche<br>ta voie</li>
+        <li id="tuto2"><span aria-hidden="true">↔</span>Fais glisser<br>le curseur</li>
+        <li id="tuto3"><span aria-hidden="true">🏆</span>Découvre ton<br>niveau et tes gains</li>
+      </ol>
+    </section>
     <span class="pinceau rouge">1. CHOISIS TA VOIE</span>
-    <div class="voies" role="group" aria-label="Ta voie">
-      <button class="voie" type="button" data-voie="projet" aria-pressed="true">
-        <span class="num">VOIE 1</span><strong>Financer mon projet</strong><small>Activité, formation, permis…</small>
+    <div class="voies attente" id="voies" role="group" aria-label="Ta voie">
+      <button class="voie" type="button" data-voie="projet" aria-pressed="false">
+        <span class="num">VOIE 1</span><strong>Financer mon projet</strong><small>Activité, formation, permis…</small><span class="touche">👆 Touche ici</span>
       </button>
       <button class="voie" type="button" data-voie="revenu" aria-pressed="false">
-        <span class="num">VOIE 2</span><strong>Me créer un revenu</strong><small>En indépendant, à ton rythme</small>
+        <span class="num">VOIE 2</span><strong>Me créer un revenu</strong><small>En indépendant, à ton rythme</small><span class="touche">👆 Touche ici</span>
       </button>
     </div>
+    <p class="attente-msg" id="attente-msg">Choisis une voie pour commencer ↑</p>
 
-    <span class="pinceau bleu">2. RÈGLE TON RYTHME</span>
+    <span class="pinceau bleu" id="etape2">2. RÈGLE TON RYTHME</span>
     <div class="curseur">
       <p class="astuce" id="astuce"><span class="main" aria-hidden="true">👉</span>Fais glisser le curseur : ton niveau et ton résultat changent selon le nombre de parfums que tu diffuses chaque jour.</p>
       <label for="parfums">Parfums par jour <output id="o-parfums">10</output></label>
@@ -255,6 +374,7 @@
       <input type="range" id="mois" min="1" max="12" step="1" value="10">
       <p class="aide">Sert à vérifier les seuils annuels (TVA, plafond).</p>
     </div>
+    <button class="btn-resultat" type="button" id="voir-resultat">VOIR MON RÉSULTAT ↓</button>
 
     <span class="pinceau rouge">3. TON RÉSULTAT</span>
     <section class="niveau" aria-live="polite">
@@ -334,6 +454,7 @@
     <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>LANCE TA DÉMO</a>
     <p class="cta-sous">1 semaine découverte · Formation financée · Zéro engagement</p>
 
+    <button class="vers-benev" type="button" id="vers-benev">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
     <p class="note">* Montants indicatifs, non garantis. Tout le fonctionnement t'est expliqué en entretien.</p>
     <p class="pied">LEVEL UP by Form'Com · Association & organisme de formation</p>
   </main>
@@ -349,6 +470,7 @@
 <script>
   /* ===== CONFIG ===== */
   const PAR_PARFUM = 4;                 // montant par parfum diffusé (non affiché)
+  const PRIX_PUBLIC = 10;               // prix de vente public d'un parfum (impact des bénévoles)
   const TAUX = { cotis: 0.212, cotisAcre: 0.159, cfp: 0.001, vl: 0.017, tva: 0.20 };   // taux 2026, prestations de services commerciales
   const SEUIL = { tva: 37500, tvaMajore: 41250, micro: 83600 };                       // seuils annuels 2026
   const MOIS = 10;                      // horizon « sur X mois »
@@ -394,7 +516,7 @@
   }
   const eur = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0") + "\u00a0€";
   const nb = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0");
-  let voie = "projet", affiche = 0;
+  let voie = "projet", choisie = false, affiche = 0;
 
   function animer(cible) {
     const debut = affiche, t0 = performance.now(), duree = 350;
@@ -444,21 +566,25 @@
     $("motiv").textContent = n.txt;
 
     // montants
-    const revenu = voie === "revenu";
+    const revenu = voie === "revenu", benevole = voie === "benevole";
     const mois = revenu ? +$("mois").value : MOIS;
     $("o-mois").textContent = $("mois").value; $("mois").style.setProperty("--p", (($("mois").value - 1) / 11 * 100) + "%");
     $("c-mois").hidden = !revenu; $("detail").hidden = !revenu;
     const brut = p * j * PAR_PARFUM;
     const tc = $("acre").checked ? TAUX.cotisAcre : TAUX.cotis;
     const cotis = revenu ? brut * tc : 0, cfp = revenu ? brut * TAUX.cfp : 0, vl = revenu && $("vl").checked ? brut * TAUX.vl : 0;
-    const net = brut - cotis - cfp - vl;
-    $("lib").textContent = revenu ? "Ce qu'il te reste, chaque mois" : "Prise en charge de ton projet, jusqu'à";
+    const net = benevole ? p * j * PRIX_PUBLIC : brut - cotis - cfp - vl;
+    $("lib").textContent = revenu ? "Ce qu'il te reste, chaque mois" : benevole ? "Fonds levés pour l'association, chaque mois" : "Prise en charge de ton projet, jusqu'à";
     $("precision").hidden = revenu;
-    $("precision").textContent = `Jusqu'à ${eur(net)} par mois de prise en charge de ton projet professionnel. Ce n'est pas un salaire : l'association règle directement les factures liées à ton projet (formation, matériel, permis…).`;
-    $("demo").innerHTML = DEMO_REMUNEREE
+    $("precision").textContent = benevole
+      ? "Montant des ventes au profit de l'association, avant frais (achat des parfums, fonctionnement). En bénévole, tu ne perçois aucune rémunération : seuls tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs."
+      : `Jusqu'à ${eur(net)} par mois de prise en charge de ton projet professionnel. Ce n'est pas un salaire : l'association règle directement les factures liées à ton projet (formation, matériel, permis…).`;
+    $("demo").innerHTML = benevole ? "<strong>Ta semaine découverte :</strong> ta formation est financée par l'association, zéro engagement. À la fin, tu choisis de continuer ou non." : DEMO_REMUNEREE
       ? "<strong>Ta semaine découverte compte déjà :</strong> elle est rémunérée comme les autres semaines. Chaque parfum diffusé compte dès le premier jour."
       : "<strong>Ta semaine découverte :</strong> ta formation est financée par l'association. Cette semaine n'est pas rémunérée : les montants ci-dessus s'appliquent après ta démo.";
-    $("t-calcul").innerHTML = revenu
+    $("t-calcul").innerHTML = benevole
+      ? `Fonds levés = parfums par jour × jours par mois × prix de vente (${eur(PRIX_PUBLIC)}). C'est le montant des ventes au profit de l'association, avant frais.`
+      : revenu
       ? `Chaque parfum diffusé te rapporte ${eur(PAR_PARFUM)} de commission.<br>Chiffre d'affaires = parfums par jour × jours par mois × ${eur(PAR_PARFUM)}.<br>Ce qu'il te reste = chiffre d'affaires − cotisations sociales − formation professionnelle (− impôt, si tu choisis le versement libératoire).<br>Les commissions sont comptées hors taxes : si la TVA est due, elle s'ajoute en plus et se reverse à l'État.`
       : `Chaque parfum diffusé ajoute ${eur(PAR_PARFUM)} au montant pris en charge pour ton projet.<br>Prise en charge = parfums par jour × jours par mois × ${eur(PAR_PARFUM)}.`;
     if (glisse) { $("montant").textContent = nb(net); affiche = net; } else animer(net);
@@ -492,19 +618,42 @@
     }
 
     // WhatsApp
-    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP : voie « ${voie === "projet" ? "Financer mon projet" : "Me créer un revenu"} », ${p} parfums par jour, niveau ${n.nom}. Je veux lancer ma démo !`;
+    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP : voie « ${voie === "projet" ? "Financer mon projet" : voie === "revenu" ? "Me créer un revenu" : "Aider l'association (bénévole)"} », ${p} parfums par jour, niveau ${n.nom}. Je veux lancer ma démo !`;
     $("cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
     $("bb-cta").href = $("cta").href;
     $("bb-montant").textContent = eur(net) + "*";
-    $("bb-lib").textContent = n.nom + (revenu ? " · ce qu'il te reste / mois" : " · pour ton projet / mois");
+    $("bb-lib").textContent = !choisie ? "Choisis ta voie en haut ↑" : n.nom + (revenu ? " · ce qu'il te reste / mois" : benevole ? " · fonds levés / mois" : " · pour ton projet / mois");
     $("bb-medal").textContent = n.icone; $("bb-medal").style.background = n.couleur;
   }
 
   document.querySelectorAll(".voie").forEach(b => b.addEventListener("click", () => {
     voie = b.dataset.voie;
-    document.querySelectorAll(".voie").forEach(x => x.setAttribute("aria-pressed", x === b));
+    document.querySelectorAll(".voie").forEach(x => {
+      const on = x === b; x.setAttribute("aria-pressed", on);
+      x.querySelector(".touche").textContent = on ? "✓ Choisie" : "Touche pour changer";
+    });
+    const premiere = !choisie; choisie = true;
+    $("voies").classList.remove("attente"); $("voies").classList.add("choisi");
+    $("attente-msg").hidden = true; $("tuto1").classList.add("fait");
     calcul();
+    if (premiere && $("depart").hidden === false) {} else if (premiere && !document.querySelector(".curseur.focus")) $("etape2").scrollIntoView({ behavior: "smooth", block: "start" });
   }));
+  $("parfums").addEventListener("input", () => { $("tuto2").classList.add("fait"); $("tuto3").classList.add("fait"); $("parfums").closest(".curseur").classList.remove("focus"); }, { once: true });
+  const doux = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  const ouvrirBenev = () => { $("depart").hidden = true; $("benev").hidden = false; $("benev").scrollTop = 0; document.body.style.overflow = "hidden"; };
+  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais aider l'association en tant que bénévole. Comment ça se passe ?");
+  $("benev-retour").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) { $("depart").hidden = false; } else document.body.style.overflow = ""; });
+  $("benev-voies").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) $("depart").hidden = false; else document.body.style.overflow = ""; });
+  $("vers-benev").addEventListener("click", ouvrirBenev);
+  document.querySelectorAll("[data-depart]").forEach(b => b.addEventListener("click", () => {
+    if (b.dataset.depart === "benevole") { ouvrirBenev(); return; }
+    $("depart").hidden = true; document.body.style.overflow = "";
+    document.querySelector(`.voie[data-voie="${b.dataset.depart}"]`).click();
+    const carte = $("parfums").closest(".curseur"); carte.classList.add("focus");
+    setTimeout(() => carte.scrollIntoView({ behavior: doux(), block: "center" }), 60);
+  }));
+  $("voir-resultat").addEventListener("click", () => { $("tuto3").classList.add("fait"); document.querySelector(".niveau").scrollIntoView({ behavior: doux(), block: "start" }); });
+  document.body.style.overflow = "hidden";
   let heures = 6;
   document.querySelectorAll(".heures button").forEach(b => b.addEventListener("click", () => {
     heures = +b.dataset.h; document.querySelectorAll(".heures button").forEach(x => x.setAttribute("aria-pressed", x === b)); calcul();
