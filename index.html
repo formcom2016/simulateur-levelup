@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!--
-  SIMULATEUR LEVEL UP by Form'Com · VERSION : semaine découverte rémunérée
+  SIMULATEUR LEVEL UP by Form'Com · 3 voies (Porteur de projet, Gagner de l'argent, Bénévole) + Pass Étudiant
+  Les QR codes ajoutent ?src=... : l'accueil s'adapte (affiche-vacances, affiche-argent, affiche-travail, affiche-projet, residence…).
+  Mise en ligne : GitHub Pages, ce fichier doit s'appeler index.html.
   Pour le partager par WhatsApp : mets ce fichier en ligne (par exemple sur app.netlify.com/drop,
   glisser-déposer, gratuit), puis envoie le lien obtenu.
   Réglages : voir la section CONFIG dans le <script> en bas du fichier.
@@ -150,8 +152,7 @@
   .gros-btn { display: flex; align-items: center; gap: .8rem; width: 100%; text-align: left; font: inherit; cursor: pointer; margin-bottom: 1rem;
     background: #FFFFFF; color: #121626; border: 3px solid #121626; border-radius: 18px; padding: 1rem 1rem; box-shadow: 6px 6px 0 #E3242B; animation: appel2 1.8s ease-in-out infinite; }
   .gros-btn:nth-of-type(2) { animation-delay: .6s; box-shadow: 6px 6px 0 #1F4FD1; }
-  .gros-btn:nth-of-type(3) { animation-delay: 1.2s; box-shadow: 6px 6px 0 #2BB673; }
-  .gros-btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #E3242B; }
+    .gros-btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0 #E3242B; }
   @keyframes appel2 { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
   .gros-btn .ic { flex: none; width: 3rem; height: 3rem; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; background: #EEF2FF; border: 2px solid #121626; }
   .gros-btn b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
@@ -184,6 +185,43 @@
   .lien-voies { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: transparent; border: 0; text-decoration: underline; cursor: pointer; }
   .pied-benev { text-align: center; font-size: .72rem; color: #6B7190; margin-top: 1rem; }
   .vers-benev { display: block; width: 100%; margin-top: 1rem; font: inherit; font-size: .85rem; font-weight: 700; color: #1F4FD1; background: #EEF2FF; border: 1.5px dashed #1F4FD1; border-radius: 12px; padding: .65rem; cursor: pointer; }
+  .gros-btn:nth-of-type(3) { animation-delay: 1.2s; box-shadow: 6px 6px 0 #2BB673; }
+  .gros-btn:nth-of-type(4) { animation-delay: 1.8s; box-shadow: 6px 6px 0 #2BB673; }
+  .etu { margin-top: 1rem; background: #FFFFFF; border: 2.5px solid #121626; border-radius: 16px; padding: .9rem 1rem; box-shadow: 4px 4px 0 #E7B23A; }
+  .etu h3 { font-family: "Bangers", "Impact", sans-serif; font-weight: 400; font-size: 1.15rem; letter-spacing: .03em; color: #0E2470; margin-bottom: .5rem; }
+  .etu h3:not(:first-child) { margin-top: .9rem; }
+  .bascule { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+  .bascule button { font: inherit; text-align: left; cursor: pointer; background: #FFFFFF; color: #121626; border: 2px solid #121626; border-radius: 12px; padding: .6rem .65rem; line-height: 1.25; }
+  .bascule button b { display: block; font-size: .85rem; }
+  .bascule button small { display: block; font-size: .7rem; color: #6B7190; margin-top: .1rem; }
+  .bascule button[aria-pressed="true"] { background: #0E2470; color: #FFFFFF; box-shadow: 3px 3px 0 #E3242B; }
+  .bascule button[aria-pressed="true"] small { color: #C9D5FF; }
+  .rythmes { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .rythmes button { font: inherit; font-size: .78rem; font-weight: 700; cursor: pointer; color: #0E2470; background: #EEF2FF; border: 1.5px solid #1F4FD1; border-radius: 99px; padding: .35rem .7rem; }
+  .rythmes button[aria-pressed="true"] { background: #1F4FD1; color: #FFFFFF; }
+  .etu-plus { list-style: none; display: grid; gap: .35rem; font-size: .84rem; line-height: 1.4; }
+  .etu-plus li::before { content: "✓ "; color: #2BB673; font-weight: 800; }
+  .etu-note { margin-top: .7rem; font-size: .78rem; line-height: 1.45; background: #FFF4D6; border-left: 4px solid #E7B23A; border-radius: 8px; padding: .55rem .7rem; }
+  .accroche { display: inline-block; margin: 0 0 1rem; font-family: "Permanent Marker", "Comic Sans MS", cursive; font-size: 1.15rem; line-height: 1.2; color: #FFFFFF; background: var(--ac, #E3242B); padding: .45rem .9rem; transform: rotate(-2deg); clip-path: polygon(0 10%, 5% 0, 50% 5%, 96% 0, 100% 12%, 98% 90%, 60% 100%, 3% 96%); }
+  .pass-zone { margin: 0 0 1.3rem; }
+  .pass-btn { display: flex; align-items: center; gap: .75rem; width: 100%; text-align: left; font: inherit; cursor: pointer; color: #121626; background: #FFE9A8; border: 3px dashed #121626; border-radius: 18px; padding: .8rem 1rem; box-shadow: 5px 5px 0 #E7B23A; }
+  .pass-btn .pass-ic { flex: none; font-size: 1.9rem; }
+  .pass-btn b { display: block; font-family: "Anton", "Impact", sans-serif; font-weight: 400; font-size: 1.3rem; line-height: 1.1; }
+  .pass-btn small { display: block; font-size: .8rem; font-weight: 600; color: #5B4A12; }
+  .pass-btn[aria-pressed="true"] { background: #2BB673; color: #FFFFFF; border-style: solid; box-shadow: 5px 5px 0 #0B5E37; }
+  .pass-btn[aria-pressed="true"] small { color: #E6FFF1; }
+  .mineur { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: .6rem; font-size: .88rem; font-weight: 700; cursor: pointer; }
+  .mineur input { width: 1.25rem; height: 1.25rem; accent-color: #E7B23A; }
+  .etu .mineur { justify-content: flex-start; margin: 0 0 .4rem; color: #121626; }
+  .choix { display: block; }
+  .gros-btn { position: relative; }
+  .gros-btn.conseil { outline: 4px solid var(--ac, #E3242B); outline-offset: 4px; }
+  .pour-toi { position: absolute; top: -.75rem; right: .8rem; font-family: "Bangers", "Impact", sans-serif; font-size: .85rem; letter-spacing: .04em; color: #FFFFFF; background: var(--ac, #E3242B); padding: .1rem .55rem; border-radius: 6px; transform: rotate(3deg); }
+  .gros-btn:disabled, .voie:disabled { opacity: .45; animation: none; cursor: not-allowed; box-shadow: none; }
+  .pass-mini { display: block; width: 100%; margin-top: .9rem; font: inherit; font-size: .9rem; font-weight: 800; cursor: pointer; color: #121626; background: #FFE9A8; border: 2.5px dashed #121626; border-radius: 14px; padding: .7rem .8rem; box-shadow: 3px 3px 0 #E7B23A; }
+  .pass-banniere { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: -.1rem 0 .7rem; background: #2BB673; color: #FFFFFF; border-radius: 10px; padding: .45rem .65rem; font-family: "Bangers", "Impact", sans-serif; font-size: 1.1rem; letter-spacing: .04em; }
+  .pass-banniere button { font: inherit; font-family: "Poppins", sans-serif; font-size: .7rem; font-weight: 700; color: #FFFFFF; background: transparent; border: 1.5px solid rgba(255,255,255,.7); border-radius: 99px; padding: .15rem .55rem; cursor: pointer; letter-spacing: 0; }
+  .etu-plus b { color: #0E2470; }
   .confetti { position: fixed; width: 8px; height: 12px; z-index: 50; pointer-events: none; border-radius: 2px; animation: tombe 1.4s ease-in forwards; }
   @keyframes tombe { to { transform: translate(var(--dx), 70vh) rotate(var(--r)); opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .medal.pop, .objectif, .confetti, .astuce .main { animation: none; } }
@@ -272,12 +310,19 @@
       <i style="left:16%;top:36%;width:9%;height:30%;background:#2F62C4"></i>
       <i style="left:48%;top:57%;width:36%;height:9%;background:#2F62C4"></i>
     </div>
+    <p class="accroche" id="accroche" hidden></p>
     <h2>Calcule ton niveau<span>LEVEL UP !</span></h2>
     <span class="chrono">⏱ 1 MINUTE CHRONO</span>
-    <p class="q">Pour commencer, touche ton objectif :</p>
-    <button class="gros-btn" type="button" data-depart="projet"><span class="ic" aria-hidden="true">🎯</span><span><b>FINANCER MON PROJET</b><small>Activité, formation, permis…</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
-    <button class="gros-btn" type="button" data-depart="revenu"><span class="ic" aria-hidden="true">💼</span><span><b>ME CRÉER UN REVENU</b><small>En indépendant, à ton rythme</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
-    <button class="gros-btn" type="button" data-depart="benevole"><span class="ic" aria-hidden="true">🤝</span><span><b>AIDER L'ASSOCIATION</b><small>En bénévole, pour la cause</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <div class="pass-zone">
+      <button class="pass-btn" type="button" data-pass aria-pressed="false"><span class="pass-ic" aria-hidden="true">🎓</span><span><b data-pass-titre>TU ES ÉTUDIANT ?</b><small data-pass-sous>Touche ici pour activer ton PASS ÉTUDIANT</small></span></button>
+      <label class="mineur" data-mineur-zone hidden><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
+    </div>
+    <p class="q">Maintenant, touche ton objectif :</p>
+    <div class="choix">
+    <button class="gros-btn" type="button" data-depart="projet"><span class="ic" aria-hidden="true">🎯</span><span><b>PORTEUR DE PROJET</b><small>L'association règle les factures de ton projet</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="revenu"><span class="ic" aria-hidden="true">💶</span><span><b>GAGNER DE L'ARGENT</b><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    <button class="gros-btn" type="button" data-depart="benevole"><span class="ic" aria-hidden="true">🤝</span><span><b>DEVENIR BÉNÉVOLE</b><small>Aider l'association, pour la cause</small></span><span class="fl" aria-hidden="true">GO ▶</span></button>
+    </div>
     <p class="rassure">Gratuit · Sans inscription · Rien n'est enregistré</p>
   </div>
 </div>
@@ -308,7 +353,7 @@
     </section>
     <a class="cta" id="benev-cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME PROPOSE</a>
     <p class="cta-sous">On te répond sur WhatsApp pour faire connaissance.</p>
-    <button class="lien-voies" type="button" id="benev-voies">Tu cherches plutôt à financer ton projet ou à te créer un revenu ? Calcule ton niveau →</button>
+    <button class="lien-voies" type="button" id="benev-voies">Tu cherches plutôt à financer ton projet ou à gagner de l'argent ? Calcule ton niveau →</button>
     <p class="pied-benev">LEVEL UP by Form'Com · Association & organisme de formation</p>
   </div>
 </div>
@@ -342,13 +387,32 @@
     <span class="pinceau rouge">1. CHOISIS TA VOIE</span>
     <div class="voies attente" id="voies" role="group" aria-label="Ta voie">
       <button class="voie" type="button" data-voie="projet" aria-pressed="false">
-        <span class="num">VOIE 1</span><strong>Financer mon projet</strong><small>Activité, formation, permis…</small><span class="touche">👆 Touche ici</span>
+        <span class="num">VOIE 1</span><strong>Porteur de projet</strong><small>L'association règle les factures de ton projet</small><span class="touche">👆 Touche ici</span>
       </button>
       <button class="voie" type="button" data-voie="revenu" aria-pressed="false">
-        <span class="num">VOIE 2</span><strong>Me créer un revenu</strong><small>En indépendant, à ton rythme</small><span class="touche">👆 Touche ici</span>
+        <span class="num">VOIE 2</span><strong>Gagner de l'argent</strong><small data-sous-revenu>Vacances, permis, voiture… en auto-entrepreneur</small><span class="touche">👆 Touche ici</span>
       </button>
     </div>
+    <button class="pass-mini" type="button" data-pass id="pass-mini">🎓 Tu es étudiant ? Active ton PASS ÉTUDIANT →</button>
     <p class="attente-msg" id="attente-msg">Choisis une voie pour commencer ↑</p>
+    <section class="etu" id="etu" hidden>
+      <div class="pass-banniere"><span>🎓 PASS ÉTUDIANT ACTIVÉ</span><button type="button" id="pass-off">Désactiver</button></div>
+      <label class="mineur"><input type="checkbox" class="mineur-cb"> J'ai 16 ou 17 ans</label>
+      <h3>TON RYTHME D'ÉTUDIANT</h3>
+      <div class="rythmes" role="group" aria-label="Rythme étudiant">
+        <button type="button" data-j="8" aria-pressed="true">Week-ends · 8 j</button>
+        <button type="button" data-j="12" aria-pressed="false">Week-ends + soirs · 12 j</button>
+        <button type="button" data-j="20" aria-pressed="false">Vacances · 20 j</button>
+      </div>
+      <h3>TES AVANTAGES PASS ÉTUDIANT</h3>
+      <ul class="etu-plus">
+        <li><b>Prime parrainage :</b> tu ramènes un camarade, tu touches une prime dès qu'il a validé sa formation.</li>
+        <li><b>Stage validé</b> et attestation de compétences pour ton CV, selon ta formation et ton école.</li>
+        <li><b>Planning adapté</b> à tes cours et à tes partiels : tu choisis tes jours.</li>
+        <li><b>Dès 16 ans</b>, avec l'autorisation écrite d'un parent.</li>
+      </ul>
+      <p class="etu-note" id="etu-note"></p>
+    </section>
 
     <span class="pinceau bleu" id="etape2">2. RÈGLE TON RYTHME</span>
     <div class="curseur">
@@ -441,18 +505,18 @@
     <section class="savoir">
       <details><summary>Ce qui t'est fourni</summary><div class="contenu">Tu n'avances rien. On te fournit :
         <ul><li>ta formation, financée par l'association ;</li><li>le kit et le stock de parfums ;</li><li>les moyens de paiement et le logiciel d'encaissement ;</li><li>ta tenue réglementaire (veste).</li></ul></div></details>
-      <details><summary>Quand et comment tu es payé</summary><div class="contenu"><b>Voie 1 :</b> chaque mois, l'association règle les factures liées à ton projet professionnel, dans la limite du montant atteint.<br><b>Voie 2 :</b> chaque mois, tu factures tes commissions à Form'Com, qui te règle par virement.</div></details>
+      <details><summary>Quand et comment tu es payé</summary><div class="contenu"><b>Porteur de projet :</b> chaque mois, l'association règle les factures liées à ton projet, dans la limite du montant atteint.<br><b>Gagner de l'argent :</b> en auto-entrepreneur, tu factures chaque mois tes commissions à Form'Com, qui te règle par virement.<br><b>Pass Étudiant :</b> tu choisis la voie qui te convient. Avant 18 ans, c'est la voie Porteur de projet.</div></details>
       <details><summary>Où va l'argent d'un parfum ?</summary><div class="contenu">C'est une levée de fonds solidaire : une partie finance ton projet (ou ta rémunération), et une partie finance les projets solidaires de l'association. Ton client repart avec un produit qu'il apprécie : tout le monde y gagne.</div></details>
       <details><summary>Primes, challenges et voyages</summary><div class="contenu">Pour motiver l'équipe, des primes et des challenges sont régulièrement organisés, jusqu'à des voyages. Ils dépendent des règles de chaque concours et ne sont pas inclus dans ce calcul.</div></details>
       <details><summary>Ce qu'on attend de toi</summary><div class="contenu">
         <ul><li>Respecter la charte éthique de Form'Com : honnêteté envers les clients, respect, aucune pression à l'achat.</li>
-        <li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie 1 uniquement).</li></ul></div></details>
+        <li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie Porteur de projet uniquement).</li></ul></div></details>
       <details><summary>Comment c'est calculé ?</summary><div class="contenu" id="t-calcul"></div></details>
       <details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Lance ta démo », dans le message WhatsApp que tu envoies toi-même.</div></details>
     </section>
 
     <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>LANCE TA DÉMO</a>
-    <p class="cta-sous">1 semaine découverte · Formation financée · Zéro engagement</p>
+    <p class="cta-sous">Semaine découverte rémunérée · Formation financée · Zéro engagement</p>
 
     <button class="vers-benev" type="button" id="vers-benev">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
     <p class="note">* Montants indicatifs, non garantis. Tout le fonctionnement t'est expliqué en entretien.</p>
@@ -474,8 +538,19 @@
   const TAUX = { cotis: 0.212, cotisAcre: 0.159, cfp: 0.001, vl: 0.017, tva: 0.20 };   // taux 2026, prestations de services commerciales
   const SEUIL = { tva: 37500, tvaMajore: 41250, micro: 83600 };                       // seuils annuels 2026
   const MOIS = 10;                      // horizon « sur X mois »
-  const DEMO_REMUNEREE = true;          // true : la semaine découverte est rémunérée comme les autres
   const WHATSAPP = "33667407214";       // numéro, format international sans +
+  // Sources des QR codes (?src=...) : texte d'accueil, voie mise en avant, couleur, Pass Étudiant activé d'office
+  const SOURCES = {
+    "affiche-vacances": { lieu: "l'affiche Vacances", voie: "revenu", couleur: "#F06A00", accroche: "Tes prochaines vacances, tu te les payes !" },
+    "affiche-argent":   { lieu: "l'affiche Argent",   voie: "revenu", couleur: "#00A383", accroche: "Ton propre argent, à ton rythme !" },
+    "affiche-travail":  { lieu: "l'affiche Travail",  voie: "revenu", couleur: "#D81E2C", accroche: "Fini le lance-pierres : tu choisis tes horaires !" },
+    "affiche-projet":   { lieu: "l'affiche Projet",   voie: "projet", couleur: "#8A3FF0", accroche: "Et si tu finançais ton projet toi-même ?" },
+    "residence":        { lieu: "une résidence étudiante", pass: true, couleur: "#2BB673", accroche: "Étudiant ? Ton Pass est déjà activé !" },
+    "stand":   { lieu: "le stand" },
+    "livret":  { lieu: "le livret projet" },
+    "papier":  { lieu: "le simulateur papier" },
+    "boitage": { lieu: "un flyer dans ma boîte aux lettres" },
+  };
   /* ================== */
 
   const NIVEAUX = [
@@ -516,7 +591,10 @@
   }
   const eur = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0") + "\u00a0€";
   const nb = n => Math.round(n).toLocaleString("fr-FR").replace(/\u202f/g, "\u00a0");
-  let voie = "projet", choisie = false, affiche = 0;
+  let voie = "projet", choisie = false, affiche = 0, pass = false, mineur = false, etuInit = false;
+  const SRC = (() => { try { return (new URLSearchParams(location.search).get("src") || "").toLowerCase().trim(); } catch (e) { return ""; } })();
+  const SOURCE = SOURCES[SRC] || (SRC ? { lieu: SRC } : null);
+  const vuSur = SOURCE ? ` (Vu sur ${SOURCE.lieu}.)` : "";
 
   function animer(cible) {
     const debut = affiche, t0 = performance.now(), duree = 350;
@@ -567,6 +645,13 @@
 
     // montants
     const revenu = voie === "revenu", benevole = voie === "benevole";
+    const etudiant = pass && !revenu && !benevole;
+    $("etu").hidden = !pass; $("pass-mini").hidden = pass;
+    $("etu-note").innerHTML = mineur
+      ? "<b>Entre 16 et 17 ans :</b> c'est la voie Porteur de projet, avec l'accord écrit d'un parent. <b>Étudiant hors Union européenne ?</b> Ton titre de séjour encadre ton activité : parlons-en avant de commencer."
+      : revenu
+      ? "<b>Auto-entreprise :</b> à partir de 18 ans. <b>Étudiant hors Union européenne ?</b> Ton titre de séjour ne permet pas l'auto-entreprise : choisis la voie Porteur de projet et parlons-en avant de commencer."
+      : "<b>Étudiant hors Union européenne ?</b> Ton titre de séjour encadre ton activité : parlons-en avant de commencer.";
     const mois = revenu ? +$("mois").value : MOIS;
     $("o-mois").textContent = $("mois").value; $("mois").style.setProperty("--p", (($("mois").value - 1) / 11 * 100) + "%");
     $("c-mois").hidden = !revenu; $("detail").hidden = !revenu;
@@ -574,14 +659,14 @@
     const tc = $("acre").checked ? TAUX.cotisAcre : TAUX.cotis;
     const cotis = revenu ? brut * tc : 0, cfp = revenu ? brut * TAUX.cfp : 0, vl = revenu && $("vl").checked ? brut * TAUX.vl : 0;
     const net = benevole ? p * j * PRIX_PUBLIC : brut - cotis - cfp - vl;
-    $("lib").textContent = revenu ? "Ce qu'il te reste, chaque mois" : benevole ? "Fonds levés pour l'association, chaque mois" : "Prise en charge de ton projet, jusqu'à";
+    $("lib").textContent = revenu ? "Ce qu'il te reste, chaque mois" : benevole ? "Fonds levés pour l'association, chaque mois" : etudiant ? "Prise en charge de tes frais, jusqu'à" : "Prise en charge de ton projet, jusqu'à";
     $("precision").hidden = revenu;
     $("precision").textContent = benevole
       ? "Montant des ventes au profit de l'association, avant frais (achat des parfums, fonctionnement). En bénévole, tu ne perçois aucune rémunération : seuls tes frais réels (transport…) peuvent t'être remboursés, sur justificatifs."
+      : etudiant
+      ? `Jusqu'à ${eur(net)} par mois de prise en charge de tes frais. Ce n'est pas un salaire : l'association règle directement tes factures (frais d'études, permis, matériel, formation…).`
       : `Jusqu'à ${eur(net)} par mois de prise en charge de ton projet professionnel. Ce n'est pas un salaire : l'association règle directement les factures liées à ton projet (formation, matériel, permis…).`;
-    $("demo").innerHTML = benevole ? "<strong>Ta semaine découverte :</strong> ta formation est financée par l'association, zéro engagement. À la fin, tu choisis de continuer ou non." : DEMO_REMUNEREE
-      ? "<strong>Ta semaine découverte compte déjà :</strong> elle est rémunérée comme les autres semaines. Chaque parfum diffusé compte dès le premier jour."
-      : "<strong>Ta semaine découverte :</strong> ta formation est financée par l'association. Cette semaine n'est pas rémunérée : les montants ci-dessus s'appliquent après ta démo.";
+    $("demo").innerHTML = "<strong>Ta semaine découverte compte déjà :</strong> elle est rémunérée comme les autres semaines. Chaque parfum diffusé compte dès le premier jour.";
     $("t-calcul").innerHTML = benevole
       ? `Fonds levés = parfums par jour × jours par mois × prix de vente (${eur(PRIX_PUBLIC)}). C'est le montant des ventes au profit de l'association, avant frais.`
       : revenu
@@ -618,20 +703,25 @@
     }
 
     // WhatsApp
-    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP : voie « ${voie === "projet" ? "Financer mon projet" : voie === "revenu" ? "Me créer un revenu" : "Aider l'association (bénévole)"} », ${p} parfums par jour, niveau ${n.nom}. Je veux lancer ma démo !`;
+    const passTxt = pass ? (mineur ? ", avec le Pass Étudiant (j'ai 16-17 ans)" : ", avec le Pass Étudiant") : "";
+    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP : voie « ${revenu ? "Gagner de l'argent" : "Porteur de projet"} »${passTxt}, ${p} parfums par jour, niveau ${n.nom}.${vuSur} Je veux lancer ma démo !`;
     $("cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
     $("bb-cta").href = $("cta").href;
     $("bb-montant").textContent = eur(net) + "*";
-    $("bb-lib").textContent = !choisie ? "Choisis ta voie en haut ↑" : n.nom + (revenu ? " · ce qu'il te reste / mois" : benevole ? " · fonds levés / mois" : " · pour ton projet / mois");
+    $("bb-lib").textContent = !choisie ? "Choisis ta voie en haut ↑" : n.nom + (revenu ? " · ce qu'il te reste / mois" : benevole ? " · fonds levés / mois" : etudiant ? " · pour tes frais / mois" : " · pour ton projet / mois");
     $("bb-medal").textContent = n.icone; $("bb-medal").style.background = n.couleur;
   }
 
-  document.querySelectorAll(".voie").forEach(b => b.addEventListener("click", () => {
-    voie = b.dataset.voie;
+  function marquerVoie(v) {
+    voie = v;
     document.querySelectorAll(".voie").forEach(x => {
-      const on = x === b; x.setAttribute("aria-pressed", on);
-      x.querySelector(".touche").textContent = on ? "✓ Choisie" : "Touche pour changer";
+      const on = x.dataset.voie === v; x.setAttribute("aria-pressed", on);
+      x.querySelector(".touche").textContent = x.disabled ? "Dès 18 ans" : on ? "✓ Choisie" : "Touche pour changer";
     });
+  }
+  document.querySelectorAll(".voie").forEach(b => b.addEventListener("click", () => {
+    if (b.disabled) return;
+    marquerVoie(b.dataset.voie);
     const premiere = !choisie; choisie = true;
     $("voies").classList.remove("attente"); $("voies").classList.add("choisi");
     $("attente-msg").hidden = true; $("tuto1").classList.add("fait");
@@ -640,12 +730,35 @@
   }));
   $("parfums").addEventListener("input", () => { $("tuto2").classList.add("fait"); $("tuto3").classList.add("fait"); $("parfums").closest(".curseur").classList.remove("focus"); }, { once: true });
   const doux = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  // ----- Pass Étudiant -----
+  function majPass() {
+    document.querySelectorAll("[data-pass]").forEach(b => b.setAttribute("aria-pressed", pass));
+    document.querySelectorAll("[data-pass-titre]").forEach(e => e.textContent = pass ? "PASS ÉTUDIANT ACTIVÉ ✓" : "TU ES ÉTUDIANT ?");
+    document.querySelectorAll("[data-pass-sous]").forEach(e => e.textContent = pass ? "Tes avantages s'affichent dans ton calcul" : "Touche ici pour activer ton PASS ÉTUDIANT");
+    document.querySelectorAll("[data-mineur-zone]").forEach(e => e.hidden = !pass);
+    document.querySelectorAll(".mineur-cb").forEach(c => c.checked = mineur);
+    const bloque = pass && mineur;
+    document.querySelectorAll('[data-depart="revenu"], .voie[data-voie="revenu"]').forEach(b => b.disabled = bloque);
+    document.querySelectorAll("[data-sous-revenu]").forEach(e => e.textContent = bloque ? "À partir de 18 ans (auto-entrepreneur)" : "Vacances, permis, voiture… en auto-entrepreneur");
+    if (bloque && voie === "revenu") marquerVoie("projet"); else if (choisie) marquerVoie(voie);
+    else document.querySelectorAll(".voie").forEach(x => x.querySelector(".touche").textContent = x.disabled ? "Dès 18 ans" : "👆 Touche ici");
+    if (pass && !etuInit) { etuInit = true; $("jours").value = 8; majRythmes(); }
+    calcul();
+  }
+  const setPass = on => { pass = on; if (!on) mineur = false; majPass(); };
+  document.querySelectorAll("[data-pass]").forEach(b => b.addEventListener("click", () => {
+    setPass(!pass);
+    if (b.id === "pass-mini" && pass) setTimeout(() => $("etu").scrollIntoView({ behavior: doux(), block: "start" }), 60);
+  }));
+  $("pass-off").addEventListener("click", () => setPass(false));
+  document.querySelectorAll(".mineur-cb").forEach(c => c.addEventListener("change", () => { mineur = c.checked; majPass(); }));
   const ouvrirBenev = () => { $("depart").hidden = true; $("benev").hidden = false; $("benev").scrollTop = 0; document.body.style.overflow = "hidden"; };
-  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais aider l'association en tant que bénévole. Comment ça se passe ?");
+  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais aider l'association en tant que bénévole." + vuSur + " Comment ça se passe ?");
   $("benev-retour").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) { $("depart").hidden = false; } else document.body.style.overflow = ""; });
   $("benev-voies").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) $("depart").hidden = false; else document.body.style.overflow = ""; });
   $("vers-benev").addEventListener("click", ouvrirBenev);
   document.querySelectorAll("[data-depart]").forEach(b => b.addEventListener("click", () => {
+    if (b.disabled) return;
     if (b.dataset.depart === "benevole") { ouvrirBenev(); return; }
     $("depart").hidden = true; document.body.style.overflow = "";
     document.querySelector(`.voie[data-voie="${b.dataset.depart}"]`).click();
@@ -661,10 +774,23 @@
   let glisse = false, prevu = false;
   const planifier = () => { if (prevu) return; prevu = true; requestAnimationFrame(() => { prevu = false; glisse = true; calcul(); glisse = false; }); };
   ["parfums", "jours", "mois"].forEach(id => $(id).addEventListener("input", planifier));
+  const majRythmes = () => document.querySelectorAll("[data-j]").forEach(x => x.setAttribute("aria-pressed", x.dataset.j === $("jours").value));
+  document.querySelectorAll("[data-j]").forEach(b => b.addEventListener("click", () => { $("jours").value = b.dataset.j; majRythmes(); calcul(); }));
+  $("jours").addEventListener("input", majRythmes);
   ["acre", "vl"].forEach(id => $(id).addEventListener("input", calcul));
   $("parfums").addEventListener("input", () => $("astuce").classList.add("vu"), { once: true });
   construirePaliers();
-  calcul();
+  if (SOURCE && SOURCE.accroche) {
+    const a = $("accroche"); a.textContent = SOURCE.accroche; a.hidden = false;
+    if (SOURCE.couleur) a.style.setProperty("--ac", SOURCE.couleur);
+  }
+  if (SOURCE && SOURCE.voie) {
+    const b = document.querySelector(`[data-depart="${SOURCE.voie}"]`);
+    b.classList.add("conseil"); if (SOURCE.couleur) b.style.setProperty("--ac", SOURCE.couleur);
+    const t = document.createElement("span"); t.className = "pour-toi"; t.textContent = "👉 POUR TOI"; b.appendChild(t);
+  }
+  if (SOURCE && SOURCE.pass) pass = true;
+  majPass();
 </script>
 </body>
 </html>
