@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <!--
   SIMULATEUR LEVEL UP by Form'Com · 3 voies (Porteur de projet, Gagner de l'argent, Bénévole) + Pass Étudiant
@@ -11,14 +12,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0E2470">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#060916">
+<meta name="color-scheme" content="dark">
 <meta property="og:title" content="LEVEL UP : calcule ton niveau">
 <meta property="og:description" content="Règle ton rythme et découvre ton niveau et ce que tu peux gagner.">
 <title>LEVEL UP : ton simulateur</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Permanent+Marker&family=Poppins:ital,wght@0,400;0,600;0,800;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root { --navy: #0E2470; --bleu: #1F4FD1; --rouge: #E3242B; --noir: #121626; --pale: #EEF2FF; --gris: #6B7190; --or: #E7B23A; --argent: #B9C2CF; --bronze: #C77B3E; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -299,6 +300,145 @@
   .note { margin-top: 1.4rem; font-size: .72rem; color: #6B7190; line-height: 1.45; }
   .pied { text-align: center; font-size: .72rem; color: #6B7190; margin-top: 1.2rem; }
   @media (prefers-reduced-motion: reduce) { .barre i { transition: none; } }
+
+  /* ===== Habillage LEVEL UP (charte du site) : fond sombre, Cormorant + Manrope, dégradé or vers corail =====
+     Seul l'habillage change ici. Les calculs, les voies et le CONFIG (script) sont inchangés. */
+  :root { --bg: #060916; --card: #101637; --card2: #0A0F26; --fg: #F2F4FC; --mut: #9BA4C6; --line: #222A52; --or2: #FFB86B; --grad: linear-gradient(90deg, #FFD27A, #FF8A5B); --rose: #FF4D5C; --vert: #3DDC97;
+    --panel: linear-gradient(160deg, #14289A 0%, #0B1450 62%, #080E36 100%); --serif: "Cormorant Garamond", Georgia, serif; --sans: "Manrope", system-ui, sans-serif; color-scheme: dark; }
+  html, body, .page, .benev { background: var(--bg); }
+  body { font-family: var(--sans); color: var(--fg); font-weight: 500; }
+  :focus-visible { outline: 3px solid var(--or2); }
+  .wrap { max-width: 32rem; }
+
+  /* En-tête */
+  .tete, .benev-tete, .depart { background: radial-gradient(80% 70% at 50% 0%, #1536C9 0%, transparent 72%), radial-gradient(45% 45% at 92% 100%, rgba(217,30,43,.22), transparent 70%), var(--bg); background-size: auto; border-bottom: 1px solid var(--line); }
+  .depart { border: 0; }
+  .tete::after, .benev-tete::after { display: none; }
+  .tete { padding-bottom: 3.2rem; }
+  .logo { border-radius: 10px; }
+  .marque b { font-family: var(--sans); font-weight: 800; font-size: 1rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+  .marque small { color: var(--mut); }
+  .tampon { font-family: var(--sans); font-weight: 800; font-size: .7rem; letter-spacing: .16em; background: transparent; color: var(--or2); border: 1px solid rgba(255,184,107,.5); border-radius: 999px; padding: .3rem .8rem; transform: none; clip-path: none; }
+  h1, .depart h2, .benev h2 { font-family: var(--serif); font-weight: 600; transform: none; letter-spacing: -.005em; line-height: 1; }
+  h1 { font-size: clamp(2.6rem, 12vw, 3.4rem); margin-top: 1.5rem; }
+  .depart h2 { font-size: clamp(2.5rem, 11vw, 3.2rem); }
+  .benev h2 { font-size: clamp(2.3rem, 10vw, 3rem); }
+  h1 span, .depart h2 span, .benev h2 span { font-style: italic; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; padding-bottom: .1em; }
+  .sous, .benev-tete p { color: var(--mut); }
+  .pinceau { font-family: var(--sans); font-weight: 800; font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; background: transparent !important; color: var(--or2); padding: 0; transform: none; clip-path: none; }
+
+  /* Surfaces */
+  .voie, .curseur, .faisable, .tuto, .niveau, .detail, .bloc, .etu, .savoir details, .gros-btn, .bascule button, .benev .bloc { background: var(--card); color: var(--fg); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 14px 34px -22px #000; }
+  .bloc.vert, .bloc.bleu, .bloc.rouge, .etu { box-shadow: 0 14px 34px -22px #000; }
+  .bloc.vert { border-color: rgba(61,220,151,.4); } .bloc.bleu { border-color: rgba(108,134,255,.45); } .bloc.rouge { border-color: rgba(255,77,92,.4); }
+  .etu { border-color: rgba(255,184,107,.4); }
+  .tuto { border-color: rgba(255,184,107,.45); }
+  .tuto-titre, .voie .num, .attente-msg, .combos-titre b, .voie .touche, .citation, .motiv { color: var(--or2); }
+  .tuto-titre, .num, .voie .num, .bloc h3, .etu h3, .detail h2, .tuto-titre { font-family: var(--sans); font-weight: 800; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; }
+  .bloc h3, .etu h3, .detail h2 { color: var(--or2); font-size: .8rem; margin-bottom: .6rem; }
+  .tuto li { color: var(--fg); }
+  .tuto li span { background: var(--grad); color: #060916; font-weight: 800; }
+  .tuto li.fait span { background: var(--vert); }
+  .voie small, .gros-btn small, .curseur .aide, .bascule button small, .ligne small, .option small, .an-ca, .note, .pied, .pied-benev, .combo small { color: var(--mut); }
+  .voie strong, .gros-btn b, .pass-btn b { font-family: var(--serif); font-weight: 700; font-size: 1.45rem; line-height: 1.05; text-transform: none; }
+  .voie[aria-pressed="true"], .bascule button[aria-pressed="true"] { background: var(--panel); color: var(--fg); border-color: var(--or2); box-shadow: 0 0 0 1px var(--or2), 0 14px 34px -18px rgba(255,184,107,.5); }
+  .voie[aria-pressed="true"] small, .bascule button[aria-pressed="true"] small { color: #C9D5FF; }
+  .voie[aria-pressed="true"] .num { color: var(--or2); } .voie[aria-pressed="true"] .touche { color: var(--vert); }
+  @keyframes appel { 0%, 100% { box-shadow: 0 14px 34px -22px #000; } 50% { box-shadow: 0 0 0 4px rgba(255,184,107,.35), 0 14px 34px -22px #000; } }
+  @keyframes focus { 50% { box-shadow: 0 0 0 8px rgba(255,184,107,.3); } }
+  .curseur.focus { box-shadow: 0 0 0 3px var(--or2); }
+  .curseur output { font-family: var(--serif); font-weight: 700; font-size: 2.3rem; color: var(--or2); }
+  .curseur label { font-weight: 700; }
+
+  /* Jauge et curseurs */
+  .jauge .piste { border: 1px solid var(--line); background: var(--card2); }
+  .medal { background: #222A52; border: 2px solid var(--bg); color: var(--mut); }
+  .medal.on { color: #060916; box-shadow: 0 0 0 4px rgba(6,9,22,.9), 0 0 16px var(--c); }
+  .medal-nom { color: #6E78A0; } .medal-nom.on { color: var(--fg); }
+  .cran { background: rgba(242,244,252,.16); } .cran-num { color: #6E78A0; } .cran-num.on { color: var(--fg); }
+  .bulle { background: var(--grad); color: #060916; font-family: var(--sans); font-weight: 800; font-size: .85rem; }
+  .bulle::after { border-top-color: #FFA66E; }
+  .objectif { font-family: var(--sans); font-weight: 800; font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; background: var(--rose); border-radius: 999px; padding: .15rem .55rem; transform: translateX(-50%); }
+  .jauge input[type=range]::-webkit-slider-thumb { background: var(--grad); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2), 0 4px 12px rgba(0,0,0,.5); }
+  input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--or2) var(--p, 30%), #222A52 var(--p, 30%)); }
+  input[type=range]::-moz-range-track { background: #222A52; }
+  input[type=range]::-moz-range-progress { background: var(--or2); }
+  input[type=range]::-webkit-slider-thumb { background: var(--grad); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+  input[type=range]::-moz-range-thumb { background: var(--or2); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+  .jauge input[type=range]::-moz-range-thumb { background: var(--or2); border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--or2); }
+
+  /* Blocs bleus (panneaux) */
+  .astuce, .heure, .preuve, .resultat, .btn-resultat { background: var(--panel); color: var(--fg); border: 1px solid rgba(108,134,255,.35); box-shadow: 0 14px 34px -22px #000; }
+  .resultat { border-radius: 22px; background-image: var(--panel); }
+  .astuce .main { color: var(--or2); }
+  .heure-tete span, .preuve-tag, .pass-banniere, .depart .chrono, .combo .x, .pour-toi, .bb-txt em { font-family: var(--sans); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+  .heure-tete span { font-size: .72rem; letter-spacing: .14em; }
+  .heure-chiffre, .montant, .details b, .combo b, .bb-txt b { font-family: var(--serif); font-weight: 700; }
+  .heure-chiffre { font-size: 2.6rem; } .heure-chiffre small { font-family: var(--sans); }
+  .montant { font-size: clamp(3.6rem, 17vw, 4.8rem); line-height: 1; }
+  .montant em { color: var(--or2); font-style: normal; font-family: var(--sans); font-weight: 700; }
+  .details b { font-size: 1.7rem; }
+  .resultat .lib, .details span, .heure-txt, .heure-chiffre small { color: #C9D5FF; }
+  .heures button[aria-pressed="true"] { background: var(--grad); color: #060916; border-color: transparent; }
+  .preuve-tag { background: var(--grad); color: #060916; transform: none; border-radius: 999px; padding: .15rem .6rem; font-size: .66rem; }
+  .preuve b { color: var(--or2); }
+  .alerte, .precision { background: rgba(255,77,92,.14); border-left-color: var(--rose); }
+  .combo { background: var(--card2); border: 1px solid var(--line); box-shadow: none; }
+  .combo .x { background: var(--rose); transform: none; border-radius: 999px; padding: .05rem .5rem; font-size: .58rem; }
+  .combo b { color: var(--or2); font-size: 1.8rem; }
+
+  /* Niveau, barre, détail */
+  .niveau { border-color: rgba(255,184,107,.4); }
+  .medaille { border: 3px solid var(--bg); }
+  .niveau-txt small { color: var(--mut); }
+  .niveau-txt strong { font-family: var(--serif); font-weight: 700; font-size: 2.4rem; color: var(--fg); letter-spacing: 0; text-transform: none; }
+  .barre { border: 1px solid var(--line); background: var(--card2); }
+  .barre i { background: var(--grad); }
+  .suivant { color: var(--fg); } .etapes span { color: #6E78A0; } .etapes span.on { color: var(--or2); }
+  .ligne { border-bottom: 1px dashed var(--line); }
+  .ligne.moins b { color: var(--rose); }
+  .ligne.total { border-top: 1px solid rgba(242,244,252,.28); } .ligne.total b { color: var(--or2); }
+  .tva { background: rgba(61,220,151,.12); border-left-color: var(--vert); } .tva.alerte2 { background: rgba(255,77,92,.13); border-left-color: var(--rose); }
+  .fisc { border-top-color: var(--line); } .fisc summary { color: var(--or2); } .fisc summary::before, .savoir summary::after { color: var(--or2); }
+  .option input, .mineur input { accent-color: var(--or2); }
+  .demo, .vers-benev { background: rgba(255,184,107,.1); border-color: rgba(255,184,107,.55); color: var(--fg); } .demo strong, .etu-plus b { color: var(--or2); }
+  .lien-voies { color: var(--or2); }
+  .savoir details { border-radius: 16px; box-shadow: none; } .savoir .contenu { color: var(--fg); }
+  .etu-note { background: rgba(255,184,107,.1); border-left-color: var(--or2); color: var(--fg); }
+  .rythmes button { background: var(--card2); border-color: var(--line); color: var(--fg); } .rythmes button[aria-pressed="true"] { background: var(--grad); color: #060916; border-color: transparent; }
+  .bloc li span, .gros-btn .ic { background: var(--card2); border: 1px solid var(--line); }
+  .citation, .motiv { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 1.5rem; transform: none; }
+
+  /* Choix de départ et boutons */
+  .gros-btn { color: var(--fg); animation: none; }
+  .gros-btn:nth-of-type(n) { box-shadow: 0 14px 34px -22px #000; }
+  .gros-btn:hover { border-color: var(--or2); }
+  .gros-btn:active { transform: scale(.985); box-shadow: 0 14px 34px -22px #000; }
+  .gros-btn .fl, .bb-cta { font-family: var(--sans); font-weight: 800; font-size: .85rem; color: #060916; background: var(--grad); border: 0; border-radius: 999px; padding: .5rem .85rem; }
+  .gros-btn.conseil { outline: 3px solid var(--ac, var(--or2)); outline-offset: 3px; }
+  .pour-toi { background: var(--ac, var(--or2)); color: #060916; transform: none; border-radius: 999px; font-size: .62rem; padding: .15rem .6rem; }
+  .depart .q { font-family: var(--serif); font-weight: 700; font-size: 1.5rem; }
+  .depart .chrono { background: transparent; border: 1px solid rgba(255,184,107,.5); color: var(--or2); transform: none; border-radius: 999px; font-size: .7rem; letter-spacing: .14em; }
+  .depart .rassure { color: var(--mut); }
+  .accroche { font-family: var(--serif); font-style: italic; font-weight: 700; font-size: 1.3rem; transform: none; clip-path: none; border-radius: 999px; padding: .4rem 1.1rem; color: #060916; }
+  .pass-btn, .pass-mini { background: rgba(255,184,107,.1); border: 1.5px dashed rgba(255,184,107,.7); color: var(--fg); box-shadow: none; border-radius: 18px; }
+  .pass-btn small { color: var(--mut); }
+  .pass-btn[aria-pressed="true"] { background: rgba(61,220,151,.16); border: 1.5px solid var(--vert); color: var(--fg); box-shadow: none; } .pass-btn[aria-pressed="true"] small { color: #CFF7E3; }
+  .pass-banniere { background: var(--vert); color: #04210F; font-size: .72rem; border-radius: 999px; }
+  .pass-banniere button { color: #04210F; border-color: rgba(4,33,15,.5); }
+  .btn-resultat { font-family: var(--sans); font-weight: 800; font-size: 1rem; border-radius: 999px; }
+  .cta { font-family: var(--sans); font-weight: 800; font-size: 1.1rem; letter-spacing: 0; color: #060916; background: var(--grad); border: 0; border-radius: 999px; box-shadow: 0 14px 30px -14px rgba(255,138,91,.7); padding: 1rem 1.2rem; }
+  .cta:active { transform: scale(.98); box-shadow: 0 8px 20px -12px rgba(255,138,91,.7); }
+  .cta .play { border-left-color: #060916; }
+  .cta-sous { color: var(--mut); }
+  .barre-bas { background: rgba(6,9,22,.92); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-top: 1px solid rgba(255,184,107,.4); box-shadow: 0 -10px 30px rgba(0,0,0,.5); }
+  .bb-medal { border: 2px solid var(--bg); }
+  .bb-txt small { color: var(--mut); } .bb-txt em { color: var(--or2); font-size: .7rem; }
+  .bb-txt b { font-size: 1.7rem; }
+  .retour { color: var(--fg); border-color: rgba(242,244,252,.35); }
+  /* chiffres bien lisibles dans Cormorant (le « 1 » ne doit pas ressembler à un « I ») */
+  .curseur output, .montant, .details b, .heure-chiffre, .combo b, .bb-txt b, .niveau-txt strong, .num, .cran-num, h1, h2 { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+  .combos-titre, .mineur, .etu .mineur, .medal-nom.on { color: var(--fg); }
 </style>
 </head>
 <body>
@@ -512,10 +652,10 @@
         <ul><li>Respecter la charte éthique de Form'Com : honnêteté envers les clients, respect, aucune pression à l'achat.</li>
         <li>Entre 16 et 17 ans : l'autorisation écrite d'un parent (voie Porteur de projet uniquement).</li></ul></div></details>
       <details><summary>Comment c'est calculé ?</summary><div class="contenu" id="t-calcul"></div></details>
-      <details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Lance ta démo », dans le message WhatsApp que tu envoies toi-même.</div></details>
+      <details><summary>Tes données</summary><div class="contenu">Ce simulateur n'enregistre rien. Tes choix ne sont partagés que si tu appuies sur « Je me lance », dans le message WhatsApp que tu envoies toi-même.</div></details>
     </section>
 
-    <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>LANCE TA DÉMO</a>
+    <a class="cta" id="cta" href="#" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span>JE ME LANCE</a>
     <p class="cta-sous">Semaine découverte rémunérée · Formation financée · Zéro engagement</p>
 
     <button class="vers-benev" type="button" id="vers-benev">🤝 Tu préfères aider l'association bénévolement ? Découvre comment →</button>
@@ -703,8 +843,13 @@
     }
 
     // WhatsApp
-    const passTxt = pass ? (mineur ? ", avec le Pass Étudiant (j'ai 16-17 ans)" : ", avec le Pass Étudiant") : "";
-    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP : voie « ${revenu ? "Gagner de l'argent" : "Porteur de projet"} »${passTxt}, ${p} parfums par jour, niveau ${n.nom}.${vuSur} Je veux lancer ma démo !`;
+    const passTxt = pass ? (mineur ? " Je suis étudiant(e), avec le Pass Étudiant, et j'ai 16-17 ans (avec l'accord d'un parent)." : " Je suis étudiant(e), avec le Pass Étudiant.") : "";
+    const voieTxt = revenu
+      ? "Je veux gagner de l'argent en indépendant (auto-entrepreneur, avec une commission par parfum)."
+      : "Je veux financer mon projet avec l'association (elle prend en charge les factures liées à mon projet).";
+    const rythme = ` Rythme testé : ${p} parfums par jour, niveau ${n.nom}, soit environ ${eur(net)} par mois ${revenu ? "pour moi" : "pour mon projet"}, à titre indicatif.`;
+    const fin = revenu ? " Je me lance : quelle est la prochaine étape ?" : " Je me lance : comment on démarre ?";
+    const msg = `Bonjour ! J'ai testé le simulateur LEVEL UP. ${voieTxt}${passTxt}${rythme}${vuSur}${fin}`;
     $("cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
     $("bb-cta").href = $("cta").href;
     $("bb-montant").textContent = eur(net) + "*";
@@ -753,7 +898,7 @@
   $("pass-off").addEventListener("click", () => setPass(false));
   document.querySelectorAll(".mineur-cb").forEach(c => c.addEventListener("change", () => { mineur = c.checked; majPass(); }));
   const ouvrirBenev = () => { $("depart").hidden = true; $("benev").hidden = false; $("benev").scrollTop = 0; document.body.style.overflow = "hidden"; };
-  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais aider l'association en tant que bénévole." + vuSur + " Comment ça se passe ?");
+  $("benev-cta").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Bonjour ! J'ai découvert LEVEL UP et j'aimerais rejoindre l'équipe en tant que bénévole." + vuSur + " Je me lance : comment ça se passe ?");
   $("benev-retour").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) { $("depart").hidden = false; } else document.body.style.overflow = ""; });
   $("benev-voies").addEventListener("click", () => { $("benev").hidden = true; if (!choisie) $("depart").hidden = false; else document.body.style.overflow = ""; });
   $("vers-benev").addEventListener("click", ouvrirBenev);
@@ -794,3 +939,5 @@
 </script>
 </body>
 </html>
+
+</body></html>
